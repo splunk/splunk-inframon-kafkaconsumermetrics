@@ -1,0 +1,557 @@
+{
+  "chartExports": [
+    {
+      "chart": {
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "How far is the consumer group behind the broker. If this is much greater than 0, it would indicate that consumption has either stopped or is not scaled enough",
+        "id": "EsI4szqAgAE",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Consumer Group Lag",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "topic"
+              },
+              {
+                "enabled": true,
+                "property": "partition"
+              },
+              {
+                "enabled": true,
+                "property": "consumergroup"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "metric_source"
+              },
+              {
+                "enabled": false,
+                "property": "container_image"
+              },
+              {
+                "enabled": false,
+                "property": "container_name"
+              },
+              {
+                "enabled": false,
+                "property": "container_id"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              },
+              {
+                "enabled": true,
+                "property": "host"
+              },
+              {
+                "enabled": true,
+                "property": "group"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": null,
+            "timezone": "UTC"
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "Consumer Group Lag",
+              "label": "Consumer Group Lag",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": 5000,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "-value",
+          "time": {
+            "range": 900000,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('kafka.consumer_group.lag', filter=(not filter('topic', '__*'))).above(0, inclusive=True, clamp=True).publish(label='Consumer Group Lag')",
+        "relatedDetectorIds": [],
+        "tags": null
+      }
+    },
+    {
+      "chart": {
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "Latest offset of a topic from a broker's POV",
+        "id": "EsI5CDdAcAE",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Topic Partition - Current Offset",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "topic"
+              },
+              {
+                "enabled": true,
+                "property": "partition"
+              },
+              {
+                "enabled": true,
+                "property": "host"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "metric_source"
+              },
+              {
+                "enabled": false,
+                "property": "container_image"
+              },
+              {
+                "enabled": false,
+                "property": "container_name"
+              },
+              {
+                "enabled": false,
+                "property": "container_id"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": null,
+            "timezone": "UTC"
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "Current Offset",
+              "label": "Current Offset",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "-value",
+          "time": {
+            "range": 900000,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('kafka.partition.current_offset', filter=(not filter('topic', '__*'))).publish(label='Current Offset')",
+        "relatedDetectorIds": [],
+        "tags": null
+      }
+    },
+    {
+      "chart": {
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "Latest offset of the consumer group",
+        "id": "EsI5CPqAYAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Consumer Group Current Offset",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "topic"
+              },
+              {
+                "enabled": true,
+                "property": "partition"
+              },
+              {
+                "enabled": true,
+                "property": "consumergroup"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "metric_source"
+              },
+              {
+                "enabled": false,
+                "property": "container_image"
+              },
+              {
+                "enabled": false,
+                "property": "container_name"
+              },
+              {
+                "enabled": false,
+                "property": "container_id"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              },
+              {
+                "enabled": true,
+                "property": "host"
+              },
+              {
+                "enabled": true,
+                "property": "group"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": null,
+            "timezone": "UTC"
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "kafka.consumer_group.offset - Exclude x < 0",
+              "label": "B",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "-value",
+          "time": {
+            "range": 900000,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "B = data('kafka.consumer_group.offset', filter=(not filter('topic', '__*'))).above(0, inclusive=True, clamp=True).publish(label='B')",
+        "relatedDetectorIds": [],
+        "tags": null
+      }
+    },
+    {
+      "chart": {
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "How far is the consumer group behind the broker. If this is much greater than 0, it would indicate that consumption has either stopped or is not scaled enough",
+        "id": "EsI5H5RAcAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Consumer Group Lag",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": false
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": 3,
+          "colorBy": "Dimension",
+          "defaultPlotType": "LineChart",
+          "eventPublishLabelOptions": [],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "topic"
+              },
+              {
+                "enabled": true,
+                "property": "partition"
+              },
+              {
+                "enabled": true,
+                "property": "consumergroup"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "metric_source"
+              },
+              {
+                "enabled": false,
+                "property": "container_image"
+              },
+              {
+                "enabled": false,
+                "property": "container_name"
+              },
+              {
+                "enabled": false,
+                "property": "container_id"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              },
+              {
+                "enabled": true,
+                "property": "host"
+              },
+              {
+                "enabled": true,
+                "property": "group"
+              }
+            ]
+          },
+          "lineChartOptions": {
+            "showDataMarkers": false
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": null,
+            "showLegend": false
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": null,
+            "timezone": "UTC"
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "Consumer Group Lag",
+              "label": "Consumer Group Lag",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 900000,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('kafka.consumer_group.lag', filter=(not filter('topic', '__*'))).publish(label='Consumer Group Lag')",
+        "relatedDetectorIds": [],
+        "tags": null
+      }
+    }
+  ],
+  "crossLinkExports": [],
+  "dashboardExports": [
+    {
+      "dashboard": {
+        "chartDensity": "DEFAULT",
+        "charts": [
+          {
+            "chartId": "EsI4szqAgAE",
+            "column": 8,
+            "height": 3,
+            "row": 0,
+            "width": 4
+          },
+          {
+            "chartId": "EsI5CDdAcAE",
+            "column": 0,
+            "height": 3,
+            "row": 0,
+            "width": 4
+          },
+          {
+            "chartId": "EsI5CPqAYAA",
+            "column": 4,
+            "height": 3,
+            "row": 0,
+            "width": 4
+          },
+          {
+            "chartId": "EsI5H5RAcAA",
+            "column": 0,
+            "height": 2,
+            "row": 3,
+            "width": 12
+          }
+        ],
+        "created": 0,
+        "creator": null,
+        "customProperties": null,
+        "description": "",
+        "discoveryOptions": null,
+        "eventOverlays": null,
+        "filters": {
+          "sources": null,
+          "time": {
+            "end": "Now",
+            "start": "-15m"
+          },
+          "variables": [
+            {
+              "alias": "broker",
+              "applyIfExists": false,
+              "description": "null",
+              "preferredSuggestions": [],
+              "property": "host",
+              "propertyMappings": [
+                "host",
+                "host.name"
+              ],
+              "replaceOnly": false,
+              "required": false,
+              "restricted": false,
+              "value": null
+            },
+            {
+              "alias": "topic",
+              "applyIfExists": false,
+              "description": "null",
+              "preferredSuggestions": [],
+              "property": "topic",
+              "propertyMappings": [
+                "topic"
+              ],
+              "replaceOnly": false,
+              "required": false,
+              "restricted": false,
+              "value": null
+            },
+            {
+              "alias": "partition",
+              "applyIfExists": false,
+              "description": "null",
+              "preferredSuggestions": [],
+              "property": "partition",
+              "propertyMappings": [
+                "partition"
+              ],
+              "replaceOnly": false,
+              "required": false,
+              "restricted": false,
+              "value": null
+            }
+          ]
+        },
+        "groupId": "EsI5J3XAYAE",
+        "id": "EsI5R2XAYAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "maxDelayOverride": null,
+        "name": "Kafka Consumer Lag",
+        "selectedEventOverlays": [],
+        "tags": null
+      }
+    }
+  ],
+  "groupExport": {
+    "group": {
+      "created": 0,
+      "creator": null,
+      "dashboards": [
+        "EsI5R2XAYAA"
+      ],
+      "description": "Dashboard(s) for Kafka Lag",
+      "email": null,
+      "id": "EsI5J3XAYAE",
+      "lastUpdated": 0,
+      "lastUpdatedBy": null,
+      "name": "[SFx] Kafka Lag Dashboard(s)",
+      "teams": null
+    }
+  },
+  "hashCode": -1065039615,
+  "id": "EsI5J3XAYAE",
+  "modelVersion": 1,
+  "packageType": "GROUP"
+}

@@ -1,0 +1,24 @@
+receivers:
+  kafkametrics:
+    protocol_version: 2.0.0
+    brokers: <broker-ip>:9092
+    collection_interval: 10s
+    scrapers:
+      - brokers
+      - topics
+      - consumers
+
+exporters:
+  signalfx:
+    access_token: "<insert-token>"
+    realm: <insert-realm, e.g. us0,us1>
+
+processors:
+  batch:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [kafkametrics]
+      processors: [batch]
+      exporters: [logging,signalfx]
